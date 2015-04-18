@@ -27,7 +27,7 @@
   "scripts": {
     "start": "node app.js",
     "debug": "node debug app.js",
-    "test": "mocha -R spec -b --recursive"
+    "test": "mocha"
   },
   "main": "app.js",
   "repository": {
