@@ -1,6 +1,7 @@
 var Sails = require('sails');
 var Barrels = require('barrels');
 var should = require('should');
+var t = 0;
 
 before(function (done) {
 
@@ -12,7 +13,14 @@ before(function (done) {
       connection: 'localDiskDb',
       migrate: 'drop'
     },
-    port : 9999
+    environment: 'development',
+    port : 9999,
+    hooks: {
+      "grunt": false,
+      "session": false,
+      "i18n": false,
+      "csrf": false
+    }
   }, function (err) {
     if (err) {
       return done(err);

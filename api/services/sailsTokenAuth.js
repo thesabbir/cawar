@@ -1,10 +1,12 @@
 var jwt = require('jsonwebtoken');
 
+var tokenSecret = "sdiuy86^^&**79394738y%%&^^&rriue98r7ruY%^&*";
+
 // With this method we generate a new token based on payload we want to put on it
 module.exports.issueToken = function(payload) {
   return jwt.sign(
     payload, // This is the payload we want to put inside the token
-    process.env.TOKEN_SECRET || "oursecret" // Secret string which will be used to sign the token
+    process.env.TOKEN_SECRET || tokenSecret // Secret string which will be used to sign the token
   );
 };
 
@@ -12,7 +14,7 @@ module.exports.issueToken = function(payload) {
 module.exports.verifyToken = function(token, verified) {
   return jwt.verify(
     token, // The token to be verified
-    process.env.TOKEN_SECRET || "oursecret", // The secret we used to sign it.
+    process.env.TOKEN_SECRET || tokenSecret, // The secret we used to sign it.
     {}, // Options, none in this case
     verified // The callback to be call when the verification is done.
   );

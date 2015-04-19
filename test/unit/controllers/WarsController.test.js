@@ -24,18 +24,38 @@ describe('WarsController', function () {
   });
 
   describe('POST /wars', function () {
-    it('should give a 401 with no Authorization header', function (done) {
-      var war = {
-        "opponent": "Depth aLike",
-        "participants": [
-        ],
-        "total_bases": 5
-      };
 
+    // Get the token before the test
+    var token;
+    before(function (done) {
+      request(sails.hooks.http.app)
+        .post('/auth')
+        .send(fixtures['users'][0])
+        .expect(200)
+        .end(function (err, res) {
+
+          token = res.body.token;
+          done();
+        });
+    });
+
+    it('should give a 401 with no Authorization header', function (done) {
       request(sails.hooks.http.app)
         .post('/wars')
-        .send(war)
+        .send(fixtures['wars'][0])
         .expect(401, done);
+    });
+
+
+    it('it should create a war', function (done) {
+      request(sails.hooks.http.app)
+        .post('/war')
+        .set({"Authorization": "Bearer " + token})
+        .send(fixtures['wars'][0])
+        .expect(200)
+        .end(function (err, res) {
+          done();
+        });
     });
 
   });
