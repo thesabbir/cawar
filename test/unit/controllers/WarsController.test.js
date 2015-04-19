@@ -25,16 +25,9 @@ describe('WarsController', function () {
 
   describe('POST /wars', function () {
     it('should give a 401 with no Authorization header', function (done) {
-      var war = {
-        "opponent": "Depth aLike",
-        "participants": [
-        ],
-        "total_bases": 5
-      };
-
       request(sails.hooks.http.app)
         .post('/wars')
-        .send(war)
+        .send(fixtures['wars'][0])
         .expect(401, done);
     });
 
