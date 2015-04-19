@@ -12,7 +12,7 @@ module.exports = {
       return res.json(401, {err: 'Password doesn\'t match'});
     }
 
-    User.create({email: req.body.email, password: req.body.password}).exec(function (err, user) {
+    Users.create(req.body).exec(function (err, user) {
       if (err) {
         res.json(err.status, {err: err});
         return;
@@ -23,4 +23,3 @@ module.exports = {
     });
   }
 };
-

@@ -8,28 +8,37 @@ var bcrypt = require('bcrypt');
 
 module.exports = {
 
+  schema: true,
+
   attributes: {
+
     username: {
       type: 'string',
       required: 'true',
       unique: true
     },
+
     email: {
       type: 'email'
     },
+
     encryptedPassword: {
       type: 'string'
     },
+
     status: 'boolean',
+
     rank: {
       type: 'string',
       defaultsTo: 'member',
       enum: ['member', 'elder', 'leader', 'co-leader', 'inactive']
     },
+
     warLog: {
       collection: 'wars',
       via: 'participants'
     },
+
     toJSON: function () {
       var obj = this.toObject();
       delete obj.encryptedPassword;

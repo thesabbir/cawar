@@ -14,12 +14,12 @@ module.exports = {
       return res.json(401, {err: 'username and password required'});
     }
 
-    User.findOneByEmail(username, function (err, user) {
+    Users.findOne({username: username}, function (err, user) {
       if (!user) {
         return res.json(401, {err: 'invalid username or password'});
       }
 
-      User.validPassword(password, user, function (err, valid) {
+      Users.validPassword(password, user, function (err, valid) {
         if (err) {
           return res.json(403, {err: 'forbidden'});
         }
