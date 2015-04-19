@@ -31,7 +31,7 @@ before(function (done) {
     barrels.populate(function (err) {
       done(err, sails);
     });
-  })
+  });
 });
 
 
