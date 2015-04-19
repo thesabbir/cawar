@@ -63,7 +63,11 @@ module.exports = {
     bcrypt.compare(password, user.encryptedPassword, function (err, match) {
 
       if(err) cb(err);
-      if(match) cb(null, true);
+      if(match) {
+        cb(null, true);
+      } else {
+        cb(err);
+      }
 
     })
   }
