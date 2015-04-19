@@ -2,16 +2,19 @@
   {
     "name": "Sabbir Ahmed",
     "username": "sabbir",
+    "password": "demo",
     "status": true
   },
   {
     "name": "Mehedee Hasan",
     "username": "Lucifer",
+    "password": "idk",
     "status": true
   },
   {
     "name": "Mamun Srizon",
     "username": "AL13N",
+    "password": "alien",
     "status": true
   }
 ]

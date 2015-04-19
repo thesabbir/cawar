@@ -33,10 +33,10 @@ module.exports = {
         "number": i + 1,
         "warID": war.id
       }).exec(function (err) {
+        if(err) throw(err);
       });
     }
     cb();
   }
 
 };
-
