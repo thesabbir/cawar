@@ -6,7 +6,10 @@ var tokenSecret = "sdiuy86^^&**79394738y%%&^^&rriue98r7ruY%^&*";
 module.exports.issueToken = function(payload) {
   return jwt.sign(
     payload, // This is the payload we want to put inside the token
-    process.env.TOKEN_SECRET || tokenSecret // Secret string which will be used to sign the token
+    process.env.TOKEN_SECRET || tokenSecret, // Secret string which will be used to sign the token
+    {
+      expiresInMinutes : 180
+    }
   );
 };
 
