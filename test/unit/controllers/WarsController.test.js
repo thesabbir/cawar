@@ -21,6 +21,18 @@ describe('WarsController', function () {
         });
 
     });
+
+    it('bases should be equal to total_bases', function (done) {
+      request(sails.hooks.http.app)
+        .get('/wars')
+        .expect(200)
+        .end(function (err, res) {
+          if (err) return done(err);
+          res.body[0].warBases.length.should.be.eql(parseInt(res.body[0].total_bases));
+          done();
+        });
+
+    });
   });
 
   describe('POST /wars', function () {
