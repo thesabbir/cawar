@@ -8,13 +8,16 @@
 module.exports = {
 
   attributes: {
+    clan : {
+      model : 'clans'
+    },
     opponent: {
       type: 'string',
       required: true
     },
     participants: {
       collection: 'users',
-      via: 'warLog'
+      via: 'id'
     },
     total_bases: {
       type: 'int',

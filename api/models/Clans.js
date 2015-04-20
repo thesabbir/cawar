@@ -8,7 +8,23 @@
 module.exports = {
 
   attributes: {
-
+    name : {
+      type : "string",
+      required: true
+    },
+    clanTag: {
+      type: "string",
+      unique: true,
+      required: true
+    },
+    members: {
+      collection : 'users',
+      via : 'clan'
+    },
+    warLog: {
+      collection : 'wars',
+      via : 'clan'
+    }
   }
 };
 
