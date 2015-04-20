@@ -1,18 +1,21 @@
 [
   {
     "name": "Sabbir Ahmed",
+    "clan" : 1,
     "username": "sabbir",
     "password": "demo",
     "status": true
   },
   {
     "name": "Mehedee Hasan",
+    "clan" : 1,
     "username": "Lucifer",
     "password": "idk",
     "status": true
   },
   {
     "name": "Mamun Srizon",
+    "clan" : 1,
     "username": "AL13N",
     "password": "alien",
     "status": true

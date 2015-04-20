@@ -8,8 +8,6 @@ var bcrypt = require('bcrypt');
 
 module.exports = {
 
-  schema: true,
-
   attributes: {
 
     username: {
@@ -17,7 +15,9 @@ module.exports = {
       required: 'true',
       unique: true
     },
-
+    clan : {
+      model: 'clans'
+    },
     email: {
       type: 'email'
     },
@@ -32,11 +32,6 @@ module.exports = {
       type: 'string',
       defaultsTo: 'member',
       enum: ['member', 'elder', 'leader', 'co-leader', 'inactive']
-    },
-
-    warLog: {
-      collection: 'wars',
-      via: 'participants'
     },
 
     toJSON: function () {

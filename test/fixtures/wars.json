@@ -1,8 +1,18 @@
 [
   {
+    "clan" : 1,
     "opponent": "Ananat Jalil",
     "participants": [
+      1, 2
     ],
-    "total_bases": 20
+    "total_bases": 5
+  },
+  {
+    "clan" : 1,
+    "opponent": "Singham Singh",
+    "participants": [
+      1, 2
+    ],
+    "total_bases": 5
   }
 ]

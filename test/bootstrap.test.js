@@ -1,7 +1,6 @@
 var Sails = require('sails');
 var Barrels = require('barrels');
 var should = require('should');
-var t = 0;
 
 before(function (done) {
 
@@ -21,7 +20,7 @@ before(function (done) {
       "i18n": false,
       "csrf": false
     }
-  }, function (err) {
+  }, function (err, sails) {
     if (err) {
       return done(err);
     }
