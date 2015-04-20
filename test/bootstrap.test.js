@@ -1,7 +1,6 @@
 var Sails = require('sails');
 var Barrels = require('barrels');
 var should = require('should');
-var t = 0;
 
 before(function (done) {
 
