@@ -5,21 +5,14 @@ module.exports = function (req, res, next) {
       if (error) {
         next(error);
       } else if (!user) {
-        error = new Error();
-
-        error.status = 401;
-        error.message = 'User not found - Please login.';
 
         next(error);
+        return res.json(401, {err: 'User not found - Please login.'});
+
       } else if (user.rank == 'supreme-leader') {
         next();
       } else {
-        error = new Error();
-
-        error.status = 403;
-        error.message = 'Forbidden - You are not the supreme leader.';
-
-        next(error);
+        return res.json(403, {err: 'Stay away! You are not supreme leader!'});
       }
     })
 };
