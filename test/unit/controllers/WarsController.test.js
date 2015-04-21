@@ -39,16 +39,36 @@ describe('WarsController', function () {
 
     // Get the token before the test
     var token;
-    before(function (done) {
-      request(sails.hooks.http.app)
-        .post('/auth')
-        .send(fixtures['users'][0])
-        .expect(200)
-        .end(function (err, res) {
+    var supremeToken;
 
-          token = res.body.token;
-          done();
+    before(function (done) {
+      async.parallel({
+          token: function (next) {
+            request(sails.hooks.http.app)
+              .post('/auth')
+              .send(fixtures['users'][1])
+              .expect(200)
+              .end(function (err, res) {
+                next(err, res.body.token);
+              });
+          },
+          supremeToken: function (next) {
+            request(sails.hooks.http.app)
+              .post('/auth')
+              .send(fixtures['users'][0])
+              .expect(200)
+              .end(function (err, res) {
+                next(err, res.body.token);
+              });
+          }
+
+        }
+        , function callback(err, result) {
+          token = result.token;
+          supremeToken = result.supremeToken;
+          done(err);
         });
+
     });
 
     it('should give a 401 with no Authorization header', function (done) {
@@ -58,16 +78,23 @@ describe('WarsController', function () {
         .expect(401, done);
     });
 
-
-    it('it should create a war', function (done) {
+    it('should create a war if has Authorization and Admin Permission', function (done) {
       request(sails.hooks.http.app)
-        .post('/war')
-        .set({"Authorization": "Bearer " + token})
+        .post('/wars')
+        .set({"Authorization": "Bearer " + supremeToken})
         .send(fixtures['wars'][0])
         .expect(200)
         .end(function (err, res) {
           done();
         });
+    });
+
+    it('should get 403 if not admin', function (done) {
+      request(sails.hooks.http.app)
+        .post('/wars')
+        .set({"Authorization": "Bearer " + token})
+        .send(fixtures['wars'][0])
+        .expect(403, done);
     });
 
   });

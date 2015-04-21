@@ -31,7 +31,7 @@ module.exports = {
     rank: {
       type: 'string',
       defaultsTo: 'member',
-      enum: ['member', 'elder', 'leader', 'co-leader', 'inactive']
+      enum: ['member', 'elder', 'leader', 'co-leader', 'inactive', 'supreme-leader']
     },
 
     toJSON: function () {
