@@ -28,7 +28,7 @@ module.exports.policies = {
 
    '*': true,
   'WarsController' : {
-    'create' : ['tokenAuth']
+    'create' : ['tokenAuth', 'isAdmin']
   }
   /***************************************************************************
   *                                                                          *
