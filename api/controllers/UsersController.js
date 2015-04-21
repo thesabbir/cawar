@@ -12,6 +12,10 @@ module.exports = {
       return res.json(401, {err: 'Password doesn\'t match'});
     }
 
+    if (req.body.rank === "supreme-leader") {
+    return res.json(403, {err: 'There is one and only supreme leader in this land.'})
+    }
+
     Users.create(req.body).exec(function (err, user) {
       if (err) {
         res.json(err.status, {err: err});
