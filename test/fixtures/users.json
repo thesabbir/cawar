@@ -4,6 +4,7 @@
     "clan" : 1,
     "username": "sabbir",
     "password": "demo",
+    "rank": "supreme-leader",
     "status": true
   },
   {
@@ -11,6 +12,7 @@
     "clan" : 1,
     "username": "Lucifer",
     "password": "idk",
+    "rank": "member",
     "status": true
   },
   {
@@ -18,6 +20,7 @@
     "clan" : 1,
     "username": "AL13N",
     "password": "alien",
+    "rank" : "leader",
     "status": true
   }
 ]

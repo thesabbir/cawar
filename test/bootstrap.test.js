@@ -6,7 +6,7 @@ before(function (done) {
 
   Sails.lift({
     log: {
-      level: 'error'
+      level: 'verbose'
     },
     models: {
       connection: 'localDiskDb',
