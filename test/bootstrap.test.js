@@ -9,7 +9,7 @@ before(function (done) {
       level: 'verbose'
     },
     models: {
-      connection: 'localDiskDb',
+      connection: 'test',
       migrate: 'drop'
     },
     environment: 'development',
