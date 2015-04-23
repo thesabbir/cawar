@@ -6,7 +6,7 @@ before(function (done) {
 
   Sails.lift({
     log: {
-      level: 'verbose'
+      level: 'error'
     },
     models: {
       connection: 'test',
