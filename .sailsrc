@@ -6,6 +6,8 @@
     "grunt": false,
     "session": false,
     "i18n": false,
-    "csrf": false
+    "csrf": false,
+    "views": false,
+    "pubsub": false
   }
 }

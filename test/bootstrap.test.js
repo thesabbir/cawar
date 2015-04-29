@@ -13,12 +13,14 @@ before(function (done) {
       migrate: 'drop'
     },
     environment: 'development',
-    port : 9999,
+    port: 9999,
     hooks: {
       "grunt": false,
       "session": false,
       "i18n": false,
-      "csrf": false
+      "csrf": false,
+      "views": false,
+      "pubsub": false
     }
   }, function (err, sails) {
     if (err) {
@@ -32,7 +34,6 @@ before(function (done) {
     });
   });
 });
-
 
 
 after(function (done) {
