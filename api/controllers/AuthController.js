@@ -29,7 +29,7 @@ module.exports = {
         } else {
           res.json({
             user: user,
-            token: sailsTokenAuth.issueToken(_.isObject(user.id) ? JSON.stringify(user.id) : user.id)
+            token: sailsTokenAuth.issueToken({ uid : user.id})
           });
         }
       });
