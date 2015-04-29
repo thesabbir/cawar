@@ -1,6 +1,6 @@
 module.exports = function (req, res, next) {
 
-  Users.findOne(req.token)
+  Users.findOne(req.token.uid)
     .exec(function exec(error, user) {
       if (error) {
         next(error);
