@@ -5,7 +5,8 @@
     "participants": [
       1, 2
     ],
-    "total_bases": 5
+    "total_bases": 5,
+    "active" : true
   },
   {
     "clan" : 1,
@@ -13,6 +14,7 @@
     "participants": [
       1, 2
     ],
-    "total_bases": 5
+    "total_bases": 5,
+    "active":false
   }
 ]

@@ -1,6 +1,6 @@
 var request = require('supertest');
 
-describe('WarsController', function () {
+describe.skip('WarsController', function () {
   describe('GET /wars', function () {
 
     it('should respond with json with rc 200', function (done) {

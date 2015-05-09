@@ -11,6 +11,10 @@ module.exports = {
     clan : {
       model : 'clans'
     },
+    active : {
+      type: 'boolean',
+      default: true
+    },
     opponent: {
       type: 'string',
       required: true
