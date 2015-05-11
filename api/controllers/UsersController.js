@@ -22,7 +22,7 @@ module.exports = {
         return;
       }
       if (user) {
-        res.json({user: user, token: sailsTokenAuth.issueToken({uid: user.id})});
+        res.json({user: user, token: sailsTokenAuth.issueToken({ uid : user.id})});
       }
     });
   }

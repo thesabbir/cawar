@@ -9,8 +9,17 @@
     "active" : true
   },
   {
-    "clan" : 1,
+    "clan" : 2,
     "opponent": "Singham Singh",
+    "participants": [
+      1, 2
+    ],
+    "total_bases": 5,
+    "active":false
+  },
+  {
+    "clan" : 2,
+    "opponent": "Dirt Cops",
     "participants": [
       1, 2
     ],
